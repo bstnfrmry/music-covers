@@ -33,8 +33,8 @@ const Search: NextApiHandler<SearchResponse> = async (req, res) => {
       return {
         name: item.name,
         url: largestImage?.url,
-        width: largestImage.width as number,
-        height: largestImage.height as number,
+        width: largestImage?.width as number,
+        height: largestImage?.height as number,
       };
     })
     .filter((result) => {
@@ -48,8 +48,8 @@ const Search: NextApiHandler<SearchResponse> = async (req, res) => {
       return {
         name: item.name,
         url: largestImage?.url,
-        width: largestImage.width as number,
-        height: largestImage.height as number,
+        width: largestImage?.width as number,
+        height: largestImage?.height as number,
       };
     })
     .filter((result) => {
