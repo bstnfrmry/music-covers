@@ -1,14 +1,11 @@
 import Head from "next/head";
 import React from "react";
-import { useTranslation } from "react-i18next";
 
 import { config } from "~/config";
 
 export const Meta: React.FC = () => {
-  const { t } = useTranslation();
-
-  const title = t("app.name");
-  const description = t("app.tagline");
+  const title = "Music Covers";
+  const description = "Find albums & artists covers";
   const url = config.app.url;
   const ogImageUrl = `${url}/images/og-image.jpg`;
 

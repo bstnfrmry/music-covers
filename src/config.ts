@@ -8,4 +8,9 @@ export const config = {
   googleAnalytics: {
     trackingCode: process.env["NEXT_PUBLIC_GOOGLE_ANALYTICS_ID"],
   },
+
+  spotify: {
+    clientId: process.env["SPOTIFY_CLIENT_ID"],
+    clientSecret: process.env["SPOTIFY_CLIENT_SECRET"],
+  },
 };

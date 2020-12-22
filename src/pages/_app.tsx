@@ -3,11 +3,9 @@ import "~/styles/index.css";
 import NextApp from "next/app";
 import Router from "next/router";
 import React from "react";
-import { I18nextProvider } from "react-i18next";
 import { SWRConfig } from "swr";
 
 import { Meta } from "~/components/Meta";
-import { i18n } from "~/i18n/config";
 import { initAnalytics, logPageView } from "~/lib/analytics";
 import { fetcher } from "~/lib/fetcher";
 
@@ -21,18 +19,12 @@ class App extends NextApp {
   }
 
   render(): JSX.Element {
-    const { Component, pageProps, router } = this.props;
-
-    if (router.locale) {
-      i18n.changeLanguage(router.locale);
-    }
+    const { Component, pageProps } = this.props;
 
     return (
       <SWRConfig value={{ fetcher }}>
-        <I18nextProvider i18n={i18n}>
-          <Meta />
-          <Component {...pageProps} />
-        </I18nextProvider>
+        <Meta />
+        <Component {...pageProps} />
       </SWRConfig>
     );
   }
