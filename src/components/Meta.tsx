@@ -7,7 +7,7 @@ export const Meta: React.FC = () => {
   const title = "Music Covers";
   const description = "Find albums & artists covers";
   const url = config.app.url;
-  const ogImageUrl = `${url}/images/og-image.jpg`;
+  const ogImageUrl = `${url}/images/og-image.png`;
 
   return (
     <Head>
