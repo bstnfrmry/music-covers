@@ -36,7 +36,7 @@ const Homepage: NextPage = () => {
           <div className="flex flex-wrap mt-4 flex-1 overflow-y-auto p-2">
             {data.results.map((result) => {
               return (
-                <div key={result.url} className="relative shadow-lg  w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6">
+                <div key={result.url} className="relative shadow-lg  w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 group">
                   <div className="relative border-2 border-white transform transition hover:scale-105 hover:border-green-500 m-1">
                     <div style={{ paddingBottom: "100%" }} />
 
@@ -49,7 +49,11 @@ const Homepage: NextPage = () => {
                       <Image height={result.height} src={result.url} width={result.width} />
                     </a>
 
-                    <div className="absolute bottom-0 left-0 bg-gray-900 bg-opacity-75 m-1 text-xs px-1 rounded">
+                    <div className="absolute bottom-0 left-0 bg-gray-900 bg-opacity-75 m-1 text-xs px-1 rounded flex flex-col">
+                      <span className="text-white group-hover:block hidden">
+                        {result.width} <span className="text-gray-500">×</span> {result.height}{" "}
+                        <span className="text-gray-500">px</span>
+                      </span>
                       <span className="text-white">{result.name}</span>
                     </div>
                   </div>
